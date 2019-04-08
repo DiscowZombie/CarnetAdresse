@@ -41,7 +41,7 @@ typedef struct {
 // Adresse du premier élement
 contact* repertoire = NULL;
 // Nombre total d'élements
-int repertoireLenght = 0;
+unsigned int repertoireLenght = 0;
 
 /*
 Affichage du sexe sous forme d'une chaine de caractères

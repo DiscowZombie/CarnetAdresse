@@ -38,7 +38,7 @@ fonction: Handle a key pressed
 */
 void handle(int key) {
   // Coordonnées de l'endroit pour afficher la question
-  int infoBarX = 7, infoBarZ = 3;
+  short infoBarX = 7, infoBarZ = 3;
 
   // Nettoyage de l'écran
   clear();
@@ -96,7 +96,7 @@ void handle(int key) {
 
       // Demande de caractères
       char toFind[10] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; // Maximum size is 10 letters
-      int letterIndex = 0;
+      unsigned int letterIndex = 0;
       char lastChar;
 
       do {

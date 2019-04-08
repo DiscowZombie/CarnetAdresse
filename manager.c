@@ -46,7 +46,7 @@ Demander un input à l'utilisateur et l'écrire dans une variable
 */
 void askInput(char* destInput, char* message) {
   // Coordonnées de l'endroit pour afficher la question
-  int infoBarX = 7, infoBarZ = 3;
+  unsigned int infoBarX = 7, infoBarZ = 3;
 
   // Nettoyage de l'écran
   clear();
@@ -80,7 +80,7 @@ char* askStringDyn(int maxLenght) {
     char* newArea = malloc((strlen(ptr_area) + 2) * sizeof(char));
 
     // Copy old char to new area (only text, not the `\0`)
-    int idx = 0;
+    size_t idx = 0;
     for (; idx < strlen(ptr_area); idx++) {
       newArea[idx] = ptr_area[idx];
     }
@@ -101,7 +101,7 @@ char* askStringDyn(int maxLenght) {
 
 char* askInputString(char* message, int maxLenght) {
   // Coordonnées de l'endroit pour afficher la question
-  int infoBarX = 7, infoBarZ = 3;
+  unsigned int infoBarX = 7, infoBarZ = 3;
 
   // Nettoyage de l'écran
   clear();
@@ -178,10 +178,10 @@ int removeContact(int index) {
    contact* newRepertoire = (contact*) malloc((repertoireLenght - 1) * sizeof(contact));
 
    // Copie de tous les anciens contacts dans le nouveau répértoire
-   for (int i = 0; i < index; i++) {
+   for (size_t i = 0; i < index; i++) {
      newRepertoire[i] = repertoire[i];
    }
-   for (int i = index; i < (repertoireLenght - 1); i++) {
+   for (size_t i = index; i < (repertoireLenght - 1); i++) {
      newRepertoire[i] = repertoire[i+1];
    }
 
@@ -204,7 +204,7 @@ void addContactToRepertoire(contact* cptr) {
   contact* newRepertoire = (contact*) malloc((repertoireLenght + 1) * sizeof(contact));
 
   // Copie de tous les anciens contact vers le nouveau répertoire
-  for (int i = 0; i < repertoireLenght; i++) {
+  for (size_t i = 0; i < repertoireLenght; i++) {
     newRepertoire[i] = repertoire[i];
   }
 
@@ -227,7 +227,7 @@ void displayContacts() {
   clear();
 
   // Index Y de début d'affichage
-  int beginY = midY - 3;
+  unsigned int beginY = midY - 3;
 
   for (int i = 0; i < repertoireLenght; i++) {
     contact c = repertoire[i];
@@ -250,12 +250,12 @@ void displayContactsNameStartBy(char ch) {
   clear();
 
   // Index Y de début d'affichage
-  int beginY = midY - 3;
+  unsigned int beginY = midY - 3;
 
   // Compter le nombre de contactes qui matchent
-  int match = 0;
+  unsigned int match = 0;
 
-  for (int i = 0; i < repertoireLenght; i++) {
+  for (size_t i = 0; i < repertoireLenght; i++) {
     contact c = repertoire[i];
 
     // La première lettre du nom ne commence pas par la même
@@ -283,16 +283,16 @@ void displayContactsNameConjStartBy(char* letters, int numbersLetters) {
   clear();
 
   // Index Y de début d'affichage
-  int beginY = midY - 3;
+  unsigned int beginY = midY - 3;
 
   // Compter le nombre de contactes qui matchent
-  int match = 0;
+  unsigned int match = 0;
 
-  for (int i = 0; i < repertoireLenght; i++) {
+  for (size_t i = 0; i < repertoireLenght; i++) {
     contact c = repertoire[i];
 
     // La première lettre du nom ne commence pas par la même
-    int match = 1;
+    unsigned int match = 1;
 
     for (int i = 0; i < numbersLetters; i++) {
       if (c.nom[i] != letters[i] && c.prenom[i] != letters[i]) match = 0;

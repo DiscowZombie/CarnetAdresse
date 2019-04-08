@@ -19,7 +19,8 @@
 #include "keys.c"
 
 /*
-Ligne de compilation : gcc -Wall main.c -o carnet_adresse -lncurses && ./carnet_adresse
+Ligne de compilation :
+  gcc -Wall main.c -o build/carnet_adresse -lncurses && ./build/carnet_adresse
 */
 
 int main() {

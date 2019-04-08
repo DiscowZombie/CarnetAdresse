@@ -27,8 +27,8 @@ typedef enum {
 } displayInstructionFormat;
 
 // Variables en fonction de la taille de l'écran
-int ncurseXSize, ncurseYSize; // x : numéro de colonne / y : numéro de ligne
-int midY;
+unsigned int ncurseXSize, ncurseYSize; // x : numéro de colonne / y : numéro de ligne
+unsigned int midY;
 
 /*
 fonction: Mettre à jour la taille de l'écran et son "pseudo-centre"
